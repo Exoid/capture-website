@@ -1,66 +1,3 @@
-# capture-website [![Build Status](https://travis-ci.com/sindresorhus/capture-website.svg?branch=master)](https://travis-ci.com/sindresorhus/capture-website)
-
-> Capture screenshots of websites
-
-It uses [Puppeteer](https://github.com/GoogleChrome/puppeteer) (Chrome) under the hood.
-
-See [capture-website-cli](https://github.com/sindresorhus/capture-website-cli) for the command-line tool.
-
-
-## Install
-
-```
-$ npm install capture-website
-```
-
-Note to Linux users: If you get a sandbox-related error, you need to enable [system sandboxing](#im-getting-a-sandbox-related-error).
-
-
-## Usage
-
-```js
-const captureWebsite = require('capture-website');
-
-(async () => {
-	await captureWebsite.file('https://sindresorhus.com', 'screenshot.png');
-})();
-```
-
-
-## API
-
-### captureWebsite.file(input, outputFilePath, options?)
-
-Capture a screenshot of the given `input` and save it to the given `outputFilePath`.
-
-Returns a `Promise<void>` that resolves when the screenshot is written.
-
-### captureWebsite.buffer(input, options?)
-
-Capture a screenshot of the given `input`.
-
-Returns a `Promise<Buffer>` with the screenshot as binary.
-
-### captureWebsite.base64(input, options?)
-
-Capture a screenshot of the given `input`.
-
-Returns a `Promise<string>` with the screenshot as [Base64](https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding).
-
-#### input
-
-Type: `string`
-
-The URL, file URL, data URL, local file path to the website, or HTML.
-
-```js
-const captureWebsite = require('capture-website');
-
-(async () => {
-	await captureWebsite.file('index.html', 'local-file.png');
-})();
-```
-
 #### options
 
 Type: `object`
@@ -451,6 +388,74 @@ Overwrite the destination file if it exists instead of throwing an error.
 Type: `string[]`
 
 Devices supported by the `emulateDevice` option.
+
+
+
+------------------------------------------------------------------
+
+# capture-website [![Build Status](https://travis-ci.com/sindresorhus/capture-website.svg?branch=master)](https://travis-ci.com/sindresorhus/capture-website)
+
+> Capture screenshots of websites
+
+It uses [Puppeteer](https://github.com/GoogleChrome/puppeteer) (Chrome) under the hood.
+
+See [capture-website-cli](https://github.com/sindresorhus/capture-website-cli) for the command-line tool.
+
+
+## Install
+
+```
+$ npm install capture-website
+```
+
+Note to Linux users: If you get a sandbox-related error, you need to enable [system sandboxing](#im-getting-a-sandbox-related-error).
+
+
+## Usage
+
+```js
+const captureWebsite = require('capture-website');
+
+(async () => {
+	await captureWebsite.file('https://sindresorhus.com', 'screenshot.png');
+})();
+```
+
+
+## API
+
+### captureWebsite.file(input, outputFilePath, options?)
+
+Capture a screenshot of the given `input` and save it to the given `outputFilePath`.
+
+Returns a `Promise<void>` that resolves when the screenshot is written.
+
+### captureWebsite.buffer(input, options?)
+
+Capture a screenshot of the given `input`.
+
+Returns a `Promise<Buffer>` with the screenshot as binary.
+
+### captureWebsite.base64(input, options?)
+
+Capture a screenshot of the given `input`.
+
+Returns a `Promise<string>` with the screenshot as [Base64](https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding).
+
+#### input
+
+Type: `string`
+
+The URL, file URL, data URL, local file path to the website, or HTML.
+
+```js
+const captureWebsite = require('capture-website');
+
+(async () => {
+	await captureWebsite.file('index.html', 'local-file.png');
+})();
+```
+
 
 
 ## Tips
